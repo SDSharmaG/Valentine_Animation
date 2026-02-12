@@ -1,0 +1,174 @@
+body {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: 'Fira Code', monospace;
+    overflow: hidden;
+}
+
+/* --- Terminal Styling --- */
+.terminal-window {
+    width: 80%;
+    max-width: 800px;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #3c3c3c;
+}
+
+.terminal-header {
+    background-color: #3c3c3c;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff5f56;
+}
+
+.yellow {
+    background-color: #ffbd2e;
+}
+
+.green {
+    background-color: #27c93f;
+}
+
+.terminal-body {
+    height: 400px;
+    overflow-y: auto;
+    color: #d4d4d4;
+    font-size: 1.1rem;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: #d4d4d4;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* --- Surprise Card Styling --- */
+.surprise-card {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.1);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Animations --- */
+.animate-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Icons */
+.icon-orbit {
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.orbit-icon {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.5s);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Heart Beat */
+.heart-beat {
+    animation: beat 1.5s infinite;
+}
+
+@keyframes beat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Code Snippet */
+.code-snippet {
+    font-family: 'Fira Code', monospace;
+    border-left: 4px solid #27c93f;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}

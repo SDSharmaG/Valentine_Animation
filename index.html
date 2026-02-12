@@ -1,0 +1,123 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+    <h1></h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="JS/index.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise for Mentor</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/index.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Container 0: Start Button -->
+    <div class="container d-flex flex-column justify-content-center align-items-center vh-100" id="start-container">
+        <h1 class="display-3 fw-bold text-white mb-4 animate-up">Dear Kathiravan.T Sir,</h1>
+
+        <div class="text-center text-white lead mb-4 animate-up" style="max-width: 700px; font-style: italic;">
+            <p>
+                Thank you for being more than a teacher — you are a true mentor, a guide, and an inspiration in my
+                journey.<br>
+                Your patience, knowledge, and motivation have shaped my confidence and skills.
+            </p>
+            <p>
+                I am truly grateful for your support, encouragement, and belief in me.<br>
+                Whatever I achieve in my career, your guidance will always be the foundation.
+            </p>
+            <p class="mt-4 fw-bold">With respect and gratitude,</p>
+        </div>
+
+        <button id="start-btn" class="btn btn-lg btn-primary fw-bold shadow-lg animate-up delay-1">
+            <i class="fa-solid fa-play me-2"></i> Start Surprise
+        </button>
+    </div>
+
+    <!-- Container 1: Terminal Simulation (Initially Hidden) -->
+    <div class="container d-flex justify-content-center align-items-center vh-100 d-none" id="terminal-container">
+        <div class="terminal-window shadow-lg">
+            <div class="terminal-header d-flex align-items-center px-3 py-2">
+                <div class="terminal-buttons d-flex gap-2">
+                    <div class="circle red"></div>
+                    <div class="circle yellow"></div>
+                    <div class="circle green"></div>
+                </div>
+                <div class="terminal-title mx-auto text-muted small">dev@mern-stack:~</div>
+            </div>
+            <div class="terminal-body p-4 text-start font-monospace">
+                <div id="terminal-content">
+                    <span class="prompt text-success">➜</span> <span class="directory text-primary">~</span> <span
+                        id="typing-command"></span><span class="cursor">_</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container 2: Surprise Card (Initially Hidden) -->
+    <div class="container d-flex justify-content-center align-items-center vh-100 d-none" id="surprise-container">
+        <div class="surprise-card text-center p-5 rounded-4 shadow-lg position-relative overflow-hidden">
+            <div class="confetti-container"></div>
+
+            <div class="icon-orbit mb-4">
+                <i class="fa-brands fa-react fa-3x text-info orbit-icon" style="--i:1"></i>
+                <i class="fa-brands fa-node fa-3x text-success orbit-icon" style="--i:2"></i>
+                <i class="fa-solid fa-database fa-3x text-success orbit-icon" style="--i:3"></i> <!-- MongoDB -->
+                <i class="fa-brands fa-js fa-3x text-warning orbit-icon" style="--i:4"></i>
+            </div>
+
+            <h1 class="display-4 fw-bold text-gradient mb-3 animate-up">Thank You, Kathiravan.T Sir!</h1>
+
+            <div class="animate-up delay-1">
+                <p class="h5 text-white-50 mb-2">"Sir, you didn’t just teach lessons, you taught life values."</p>
+                <p class="h5 text-white-50 mb-4">"You didn’t just correct mistakes, you built confidence."</p>
+            </div>
+
+            <div class="code-snippet bg-dark p-3 rounded text-start mx-auto d-inline-block animate-up delay-2">
+                <code class="text-success">const</code> <code class="text-primary">impact</code> = {<br>
+                &nbsp;&nbsp;lessons: <span class="text-warning">"Mastered"</span>,<br>
+                &nbsp;&nbsp;values: <span class="text-warning">"Ingrained"</span>,<br>
+                &nbsp;&nbsp;confidence: <span class="text-warning">"MAX_LEVEL"</span>,<br>
+                &nbsp;&nbsp;gratitude: <span class="text-warning">"Infinite"</span><br>
+                };
+            </div>
+
+            <div class="mt-4 animate-up delay-3">
+                <p class="lead text-light fw-bold">"Thank you for shaping me into a better developer and a better
+                    person."</p>
+                <div class="heart-beat text-danger display-6 mt-3">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="JS/index.js"></script>
+</body>
+
+</html>
