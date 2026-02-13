@@ -34,26 +34,48 @@
 
 <body>
 
-    <!-- Container 0: Start Button -->
-    <div class="container d-flex flex-column justify-content-center align-items-center vh-100" id="start-container">
-        <h1 class="display-3 fw-bold text-white mb-4 animate-up">Dear Kathiravan.T Sir,</h1>
 
-        <div class="text-center text-white lead mb-4 animate-up" style="max-width: 700px; font-style: italic;">
-            <p>
-                Thank you for being more than a teacher — you are a true mentor, a guide, and an inspiration in my
-                journey.<br>
-                Your patience, knowledge, and motivation have shaped my confidence and skills.
-            </p>
-            <p>
-                I am truly grateful for your support, encouragement, and belief in me.<br>
-                Whatever I achieve in my career, your guidance will always be the foundation.
-            </p>
-            <p class="mt-4 fw-bold">With respect and gratitude,</p>
+
+    <!-- Background Slideshow -->
+    <div id="background-slideshow"></div>
+
+    <!-- Container -1: Gift Box (Initial State) -->
+    <div class="container d-flex flex-column justify-content-center align-items-center vh-100" id="gift-container">
+        <h1 class="valentine-title mb-5 text-center">Happy Valentine's Day!</h1>
+        <div class="gift-box animate-bounce">
+            <div class="gift-lid"></div>
+            <div class="gift-body"></div>
+            <div class="gift-ribbon-horizontal"></div>
+            <div class="gift-ribbon-vertical"></div>
+            <div class="gift-bow"></div>
         </div>
+        <p class="mt-4 text-white lead fw-bold animate-pulse text-center">Double Tap to Open ❤️</p>
+    </div>
 
-        <button id="start-btn" class="btn btn-lg btn-primary fw-bold shadow-lg animate-up delay-1">
-            <i class="fa-solid fa-play me-2"></i> Start Surprise
-        </button>
+    <!-- Container 0: Start Button (Initially Hidden) -->
+    <div class="container d-flex flex-column justify-content-center align-items-center vh-100 d-none"
+        id="start-container">
+        <div class="start-card text-center p-5 rounded-4 shadow-lg position-relative overflow-hidden">
+            <h1 class="display-3 fw-bold text-white mb-4 animate-up">Dear Kathiravan.T Sir,</h1>
+
+            <div class="text-center text-white lead mb-4 animate-up mx-auto"
+                style="max-width: 700px; font-style: italic;">
+                <p>
+                    Thank you for being more than a teacher — you are a true mentor, a guide, and an inspiration in my
+                    journey.<br>
+                    Your patience, knowledge, and motivation have shaped my confidence and skills.
+                </p>
+                <p>
+                    I am truly grateful for your support, encouragement, and belief in me.<br>
+                    Whatever I achieve in my career, your guidance will always be the foundation.
+                </p>
+                <p class="mt-4 fw-bold">With respect and gratitude,</p>
+            </div>
+
+            <button id="start-btn" class="btn btn-lg btn-primary fw-bold shadow-lg animate-up delay-1">
+                <i class="fa-solid fa-play me-2"></i> Start Surprise
+            </button>
+        </div>
     </div>
 
     <!-- Container 1: Terminal Simulation (Initially Hidden) -->
@@ -95,13 +117,21 @@
                 <p class="h5 text-white-50 mb-4">"You didn’t just correct mistakes, you built confidence."</p>
             </div>
 
-            <div class="code-snippet bg-dark p-3 rounded text-start mx-auto d-inline-block animate-up delay-2">
-                <code class="text-success">const</code> <code class="text-primary">impact</code> = {<br>
-                &nbsp;&nbsp;lessons: <span class="text-warning">"Mastered"</span>,<br>
-                &nbsp;&nbsp;values: <span class="text-warning">"Ingrained"</span>,<br>
-                &nbsp;&nbsp;confidence: <span class="text-warning">"MAX_LEVEL"</span>,<br>
-                &nbsp;&nbsp;gratitude: <span class="text-warning">"Infinite"</span><br>
-                };
+            <div
+                class="impact-wrapper mt-4 d-flex justify-content-center align-items-center gap-4 flex-wrap animate-up delay-2">
+                <div class="code-snippet bg-dark p-3 rounded text-start shadow-sm">
+                    <code class="text-success">const</code> <code class="text-primary">impact</code> = {<br>
+                    &nbsp;&nbsp;lessons: <span class="text-warning">"Mastered"</span>,<br>
+                    &nbsp;&nbsp;values: <span class="text-warning">"Ingrained"</span>,<br>
+                    &nbsp;&nbsp;confidence: <span class="text-warning">"MAX_LEVEL"</span>,<br>
+                    &nbsp;&nbsp;gratitude: <span class="text-warning">"Infinite"</span><br>
+                    };
+                </div>
+
+                <div class="mentor-image-wrapper">
+                    <img src="images/sir.webp" alt="Kathiravan.T Sir"
+                        class="mentor-profile-img shadow-lg border border-3 border-light rounded-circle">
+                </div>
             </div>
 
             <div class="mt-4 animate-up delay-3">

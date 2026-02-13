@@ -104,6 +104,115 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
+
+    // 6. Background Slideshow
+    function createBackgroundSlideshow() {
+        const slideshowContainer = document.getElementById('background-slideshow');
+        const images = [
+            'images/class.png'
+        ];
+        
+        if (images.length === 0) return;
+
+        let currentIndex = 0;
+
+        // Create image elements
+        images.forEach((src, index) => {
+            const imgDiv = document.createElement('div');
+            imgDiv.classList.add('bg-image');
+            imgDiv.style.backgroundImage = `url('${src}')`;
+            if (index === 0) imgDiv.classList.add('active');
+            slideshowContainer.appendChild(imgDiv);
+        });
+
+        // Cycle images if more than one
+        if (images.length > 1) {
+            setInterval(() => {
+                const imgElements = document.querySelectorAll('.bg-image');
+                imgElements[currentIndex].classList.remove('active');
+                
+                currentIndex = (currentIndex + 1) % imgElements.length;
+                
+                imgElements[currentIndex].classList.add('active');
+            }, 5000); // Change every 5 seconds
+        }
+    }
+
+    // Start background slideshow
+    createBackgroundSlideshow();
+
+    // 5. Falling Hearts Animation
+    function createFallingHearts() {
+        const heartContainer = document.createElement('div');
+        heartContainer.classList.add('heart-container');
+        document.body.appendChild(heartContainer);
+
+        const heartCount = 50; // Number of hearts
+
+        for (let i = 0; i < heartCount; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '<i class="fa-solid fa-heart"></i>'; // Using FontAwesome heart
+
+            // Random properties
+            const left = Math.random() * 100 + 'vw';
+            const animDuration = Math.random() * 3 + 5 + 's'; // 5-8s duration
+            const animDelay = Math.random() * 5 + 's';
+            const size = Math.random() * 20 + 10 + 'px'; // 10-30px size
+            
+            heart.style.left = left;
+            heart.style.animationDuration = animDuration;
+            heart.style.animationDelay = animDelay;
+            heart.style.fontSize = size;
+            
+            heartContainer.appendChild(heart);
+        }
+    }
+
+    // 7. Gift Box Opening
+    function handleGiftOpening() {
+        const giftContainer = document.getElementById('gift-container');
+        const startContainer = document.getElementById('start-container');
+        const giftBox = document.querySelector('.gift-box');
+
+        // Handle Double Click / Double Tap
+        giftBox.addEventListener('dblclick', openGift);
+        
+        // Touch support for double tap check
+        let lastTap = 0;
+        giftBox.addEventListener('touchend', function(e) {
+            const currentTime = new Date().getTime();
+            const tapLength = currentTime - lastTap;
+            if (tapLength < 500 && tapLength > 0) {
+                openGift();
+                e.preventDefault();
+            }
+            lastTap = currentTime;
+        });
+
+        function openGift() {
+            // Animate gift out
+            giftContainer.classList.add('fade-out-gift');
+            
+            setTimeout(() => {
+                giftContainer.classList.add('d-none');
+                startContainer.classList.remove('d-none');
+                // Optional: Add a fade-in effect to start container if not already animate-up
+                startContainer.style.opacity = '0';
+                startContainer.style.transition = 'opacity 1s ease';
+                setTimeout(() => startContainer.style.opacity = '1', 50);
+            }, 800); // Wait for transition
+        }
+    }
+
+    handleGiftOpening();
+
+
+
+    // Start falling hearts immediately
+    createFallingHearts();
+
     const startBtn = document.getElementById('start-btn');
     const startContainer = document.getElementById('start-container');
 
