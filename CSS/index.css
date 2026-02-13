@@ -288,10 +288,67 @@ body {
 
 
 
+@media (max-width: 768px) {
+    .valentine-title {
+        font-size: 3rem;
+    }
+
+    .start-card {
+        padding: 2rem !important;
+    }
+
+    .display-3 {
+        font-size: 2.5rem;
+    }
+}
+
 @media (max-width: 576px) {
-    .mentor-profile-img {
+    .valentine-title {
+        font-size: 2rem;
+        margin-bottom: 2rem !important;
+    }
+
+    .gift-box {
+        width: 100px;
+        height: 100px;
+    }
+
+    .gift-lid {
         width: 120px;
-        height: 120px;
+        left: -10px;
+    }
+
+    .gift-ribbon-vertical {
+        left: 40px;
+        height: 130px;
+    }
+
+    .gift-ribbon-horizontal {
+        top: 40px;
+        width: 100px;
+    }
+
+    .gift-bow {
+        left: 25px;
+        top: -40px;
+        transform: scale(0.8);
+    }
+
+    .mentor-profile-img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1rem;
+    }
+
+    .impact-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .code-snippet {
+        font-size: 0.8rem;
+        width: 100%;
     }
 }
 
