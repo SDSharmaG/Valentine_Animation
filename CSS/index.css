@@ -157,8 +157,23 @@ body {
 }
 
 /* Heart Beat */
+/* Heart Beat */
 .heart-beat {
-    animation: beat 1.5s infinite;
+    animation: pulseHeart 1.5s infinite;
+}
+
+@keyframes pulseHeart {
+
+    0%,
+    100% {
+        opacity: 0.7;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
 }
 
 @keyframes beat {
@@ -260,7 +275,7 @@ body {
     /* Low opacity to not distract */
     transform: scale(1.1);
     /* Subtle zoom effect */
-    animation: zoomIn 20s linear infinite alternate;
+    /* animation: zoomIn 20s linear infinite alternate; REMOVED per user request */
 }
 
 @keyframes zoomIn {
@@ -294,11 +309,72 @@ body {
     }
 
     .start-card {
-        padding: 2rem !important;
+        padding: 1.5rem !important;
+        /* Reduce padding */
+        overflow: visible !important;
+        margin-top: auto;
+        margin-bottom: auto;
+        border-radius: 0 !important;
+        /* Full width on mobile looks better sometimes, or keep rounded */
+    }
+
+    #start-container:not(.d-none) {
+        height: auto !important;
+        min-height: 100vh;
+        display: flex !important;
+        flex-direction: column;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    #terminal-container:not(.d-none),
+    #terminal-container:not(.d-none) {
+        height: auto !important;
+        min-height: 100vh;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        /* Force vertical centering */
+        align-items: center;
+        /* Force horizontal centering */
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        /* Prevent horizontal scrollbar jitter */
+    }
+
+    #surprise-container:not(.d-none) {
+        height: auto !important;
+        min-height: 100vh;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: flex-start;
+        /* Prefer explicit control or rely on margin: auto */
+        align-items: center;
+        /* Keeps horizontal centering */
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        /* Prevent horizontal scrollbar jitter */
+    }
+
+    /* Disable hover effects on mobile to prevent jitter */
+    .mentor-profile-img:hover {
+        transform: none !important;
     }
 
     .display-3 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        /* Smaller title */
+        margin-bottom: 1rem !important;
+    }
+
+    .lead {
+        font-size: 1rem;
+        /* Smaller text */
+        margin-bottom: 1rem !important;
     }
 }
 
@@ -346,9 +422,45 @@ body {
         text-align: center;
     }
 
-    .code-snippet {
-        font-size: 0.8rem;
+    .surprise-card {
+        padding: 1.5rem !important;
+        /* Reduce padding significantly */
+        overflow: visible !important;
+        margin-top: auto;
+        /* Handles vertical centering if space permits */
+        margin-bottom: auto;
         width: 100%;
+        /* Ensure it doesn't shrink weirdly */
+    }
+
+    .surprise-card .display-4 {
+        font-size: 2rem;
+        /* Much smaller title */
+        margin-bottom: 1rem !important;
+    }
+
+    .surprise-card .h5 {
+        font-size: 1rem;
+        /* Smaller quotes */
+    }
+
+    .icon-orbit {
+        height: 70px;
+        /* Compress height */
+        transform: scale(0.7);
+        /* Shrink icons */
+        margin-bottom: 0.5rem !important;
+    }
+
+    .code-snippet {
+        font-size: 0.75rem;
+        /* Smaller code */
+        width: 100%;
+        padding: 1rem !important;
+    }
+
+    .mentor-image-wrapper {
+        margin-top: 1rem;
     }
 }
 
